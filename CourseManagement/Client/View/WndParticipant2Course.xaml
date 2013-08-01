@@ -1,0 +1,28 @@
+﻿<Window x:Class="CourseManagement.Client.View.WndParticipant2Course"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Teilnehmer zu Kurz hinzufügen" Height="300" Width="500" SizeToContent="WidthAndHeight"
+        Icon="Images\Kursverwaltung.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Label Content="Teilnehmer zu Kurs hinzufügen" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel>
+                    <Label Content="Kurse" Margin="10,5,10,0"/>
+                    <ListBox x:Name="lbxCourses" Margin="10,5,10,5" IsSynchronizedWithCurrentItem="True" Width="180" HorizontalAlignment="Left" SelectionChanged="lbxCourses_SelectionChanged" />
+                </StackPanel>
+                
+                <StackPanel>
+                    <Label Content="Studenten" Margin="10,5,10,0"/>
+                    <ListBox x:Name="lbxParticipants" Margin="10,5,10,5" IsSynchronizedWithCurrentItem="True" MaxHeight="500" Width="180"  SelectionMode="Multiple" ToolTip="Jeder grün markierte Student ist bereits dem gewählten Kurs zugeordnet">
+                </ListBox>
+                </StackPanel>
+            </StackPanel>
+            <!--<DataGrid x:Name="dgParticipant" Margin="10" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True"/>-->
+            <Button x:Name="addPerson2Course" Content="Hinzufügen" Margin="10,5,10,0" Click="buttonAddPerson2Course_CLick"/>
+            <Button x:Name="removePersonFromCourse" Content="Zuordnung entfernen" Margin="10,5,10,0" Click="buttonRemovePersonFromCourse_CLick"/>
+            <Button x:Name="close" Content="Abrechen" Margin="10,5,10,5" Click="close_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

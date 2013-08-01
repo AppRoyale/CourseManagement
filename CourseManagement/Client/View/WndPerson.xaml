@@ -1,0 +1,96 @@
+﻿<Window x:Class="CourseManagement.Client.View.wndPerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Neue Person" Width="450"
+        Icon="Images\Kursverwaltung.ico" SizeToContent="Height" Loaded="wndPerson_Loaded"  ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Label x:Name="lblPerson" Content="Neue Person" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <StackPanel Margin="10">
+                <StackPanel Margin="10">
+                <Label x:Name="lblRole" FontWeight="Bold" Content="Rolle"/>
+                <ComboBox x:Name="cbxRole" Width="120" HorizontalAlignment="Left" SelectionChanged="comboBoxRole_SelectonChanged">
+                    <ComboBoxItem x:Name="cbxiTutor" Content="Tutor" IsSelected="True"/>
+                    <ComboBoxItem x:Name="cbxiStudent" Content="Student"/>
+                    <ComboBoxItem x:Name="cbxiUser" Content="User" />
+                </ComboBox>
+                    <Label x:Name="lblErrorKindOfPerson" Foreground="Red" Content="Bitte Art der Person auswählen" Visibility="Hidden" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="10">
+                    <Label x:Name="lblTitle" Content="Titel" />
+                    <ComboBox x:Name="cbxTitle" Width="120">
+                        <ComboBoxItem x:Name="cbxidoctor" Content="Doktor"/>
+                        <ComboBoxItem x:Name="cbxiProf" Content="Professor"/>
+                    </ComboBox>
+                    <Label x:Name="lblStreet" Content="Straße"/>
+                    <TextBox x:Name="tbStreet" Width="120"/>
+                    <Label x:Name="lblMobil" Content="HandyNr" />
+                    <TextBox x:Name="tbMobil" Width="120"/>
+                    <Label x:Name="lblEmail" Content="E-Mail" />
+                    <TextBox x:Name="tbEmail" Width="120"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Label x:Name="lblForename" Content="Vorname"/>
+                    <TextBox x:Name="tbForename" Width="120"/>
+                    <Label x:Name="lblCityCode" Content="Postleitzahl" />
+                    <TextBox x:Name="tbCityCode" Width="120"/>
+                    <Label x:Name="lblPhone" Content="Telefonnummer" />
+                    <TextBox x:Name="tbPhone" Width="120"/>
+                    <Label x:Name="lblGender" Content="Geschlecht"/>
+                    <ComboBox x:Name="tbGender" Width="120">
+                        <ComboBoxItem x:Name="cbxiMale" Content="Mann"/>
+                        <ComboBoxItem x:Name="cbxiFemale" Content="Frau"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Label x:Name="lblSurname" Content="Nachname" />
+                    <TextBox x:Name="tbSurname" Width="120"/>
+                    <Label x:Name="lblCity" Content="Stadt" />
+                    <TextBox x:Name="tbCity" Width="120"/>
+                    <Label x:Name="lblFax" Content="FaxNummer" />
+                    <TextBox x:Name="tbFax" Width="120"/>
+                    <Label x:Name="lblBirthyear" Content="Geburtsjahr" />
+                    <TextBox x:Name="tbBirthyear" Width="120"/>
+                    <Label x:Name="lblIsActive" Content="aktiv?" />
+                    <CheckBox x:Name="chbxIsActive" Height="22" Width="120" IsChecked="True"/>  
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="spStudent" Height="0" Margin="10" Orientation="Horizontal">
+                <StackPanel Margin="10">
+                    <Label x:Name="lblIBAN" Content="IBAN" />
+                    <TextBox x:Name="tbIBAN" Width="120" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblDepositor" Content="Kontoinhaber" />
+                    <TextBox x:Name="tbDepositor" Width="120" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Label x:Name="lblBIC" Content="BIC" />
+                    <TextBox x:Name="tbBIC" Width="120" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblBank" Content="Bank" />
+                    <TextBox x:Name="tbBank" Width="120" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="spUser" Height="0" Margin="10" Orientation="Horizontal">
+                <StackPanel Margin="10">
+                    <Label x:Name="lblUsername" Content="Benutzername" />
+                    <TextBox x:Name="tbUsername" Width="120" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Label x:Name="lblPassword" Content="Passwort" />
+                    <PasswordBox x:Name="pwbPassword" Width="120" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Label x:Name="lblAdmin" Content="Admin" />
+                    <CheckBox x:Name="chbxAdmin" Width="120" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </StackPanel>
+            <Label x:Name="lblWrongUserInput" Content="Bitte die rot markierten Felder korrekt ausfüllen" Visibility="Hidden" Foreground="Red"/>
+            <StackPanel Margin="10" Orientation="Horizontal">
+            <Button x:Name="btnSave" Content="Speichern" Margin="5" Width="75" Click="buttonSavePerson_Click"/>
+            <Button x:Name="btnAport" Content="Abbrechen" Margin="5" Width="75" Click="buttonCancelPerson_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

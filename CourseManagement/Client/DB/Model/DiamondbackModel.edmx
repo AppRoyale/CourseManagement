@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DiamondbackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DiamondbackModelStoreContainer">
+    <EntitySet Name="Persons" EntityType="DiamondbackModel.Store.Persons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="DiamondbackModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rooms" EntityType="DiamondbackModel.Store.Rooms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Courses" EntityType="DiamondbackModel.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Appointments" EntityType="DiamondbackModel.Store.Appointments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persons_Student" EntityType="DiamondbackModel.Store.Persons_Student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persons_Tutor" EntityType="DiamondbackModel.Store.Persons_Tutor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persons_User" EntityType="DiamondbackModel.Store.Persons_User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PaymentStudent" Association="DiamondbackModel.Store.PaymentStudent">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="Student" EntitySet="Persons_Student" />
+    </AssociationSet>
+    <AssociationSet Name="TutorCourse" Association="DiamondbackModel.Store.TutorCourse">
+      <End Role="Tutor" EntitySet="Persons_Tutor" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="CoursePayment" Association="DiamondbackModel.Store.CoursePayment">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="CourseAppointment" Association="DiamondbackModel.Store.CourseAppointment">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="RoomAppointment" Association="DiamondbackModel.Store.RoomAppointment">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_inherits_Person" Association="DiamondbackModel.Store.FK_Student_inherits_Person">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Student" EntitySet="Persons_Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tutor_inherits_Person" Association="DiamondbackModel.Store.FK_Tutor_inherits_Person">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Tutor" EntitySet="Persons_Tutor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_inherits_Person" Association="DiamondbackModel.Store.FK_User_inherits_Person">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="User" EntitySet="Persons_User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Persons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Forename" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Birthyear" Type="nvarchar" Nullable="true" MaxLength="4" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MobilePhone" Type="nvarchar" Nullable="true" MaxLength="12" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PrivatePhone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Gender" Type="nvarchar" Nullable="true" MaxLength="4" />
+    <Property Name="Active" Type="bit" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CityCode" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="true" />
+    <Property Name="Student_Id" Type="int" Nullable="false" />
+    <Property Name="Course_CourseNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="RoomNr" />
+    </Key>
+    <Property Name="RoomNr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capacity" Type="int" Nullable="true" />
+    <Property Name="Building" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CityCode" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="CourseNr" />
+    </Key>
+    <Property Name="CourseNr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AmountInEuro" Type="decimal" Nullable="true" Precision="6" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MaxMember" Type="int" Nullable="true" />
+    <Property Name="MinMember" Type="int" Nullable="true" />
+    <Property Name="ValidityInMonth" Type="int" Nullable="true" />
+    <Property Name="Tutor_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="Course_CourseNr" Type="int" Nullable="false" />
+    <Property Name="Room_RoomNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persons_Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IBAN" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BIC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Depositor" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NameOfBank" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persons_Tutor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persons_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LastLogin" Type="datetime" Nullable="true" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="true" />
+    <Property Name="Admin" Type="bit" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PaymentStudent">
+    <End Role="Payment" Type="DiamondbackModel.Store.Payments" Multiplicity="*" />
+    <End Role="Student" Type="DiamondbackModel.Store.Persons_Student" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TutorCourse">
+    <End Role="Tutor" Type="DiamondbackModel.Store.Persons_Tutor" Multiplicity="1" />
+    <End Role="Course" Type="DiamondbackModel.Store.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tutor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="Tutor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CoursePayment">
+    <End Role="Course" Type="DiamondbackModel.Store.Courses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Payment" Type="DiamondbackModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseNr" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Course_CourseNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseAppointment">
+    <End Role="Course" Type="DiamondbackModel.Store.Courses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Appointment" Type="DiamondbackModel.Store.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseNr" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="Course_CourseNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoomAppointment">
+    <End Role="Room" Type="DiamondbackModel.Store.Rooms" Multiplicity="1" />
+    <End Role="Appointment" Type="DiamondbackModel.Store.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="RoomNr" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="Room_RoomNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_inherits_Person">
+    <End Role="Person" Type="DiamondbackModel.Store.Persons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student" Type="DiamondbackModel.Store.Persons_Student" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tutor_inherits_Person">
+    <End Role="Person" Type="DiamondbackModel.Store.Persons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tutor" Type="DiamondbackModel.Store.Persons_Tutor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tutor">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_inherits_Person">
+    <End Role="Person" Type="DiamondbackModel.Store.Persons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="DiamondbackModel.Store.Persons_User" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DiamondbackModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DiamondbackModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Persons" EntityType="DiamondbackModel.Person" />
+          <EntitySet Name="Payments" EntityType="DiamondbackModel.Payment" />
+          <EntitySet Name="Rooms" EntityType="DiamondbackModel.Room" />
+          <AssociationSet Name="PaymentStudent" Association="DiamondbackModel.PaymentStudent">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="Student" EntitySet="Persons" />
+          </AssociationSet>
+          <EntitySet Name="Courses" EntityType="DiamondbackModel.Course" />
+          <AssociationSet Name="TutorCourse" Association="DiamondbackModel.TutorCourse">
+            <End Role="Tutor" EntitySet="Persons" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="CoursePayment" Association="DiamondbackModel.CoursePayment">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <EntitySet Name="Appointments" EntityType="DiamondbackModel.Appointment" />
+          <AssociationSet Name="CourseAppointment" Association="DiamondbackModel.CourseAppointment">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Appointment" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="RoomAppointment" Association="DiamondbackModel.RoomAppointment">
+            <End EntitySet="Rooms" Role="Room" />
+            <End EntitySet="Appointments" Role="Appointment" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Person" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <Property Type="String" Name="Surname" Nullable="true" FixedLength="false" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" />
+          <Property Type="String" Name="Forename" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Birthyear" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Street" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="12" cg:SetterAccess="Public" cg:GetterAccess="Public" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Mail" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Fax" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="PrivatePhone" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Gender" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Type="Boolean" Name="Active" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <Property Type="String" Name="Title" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="City" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="CityCode" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tutor" BaseType="DiamondbackModel.Person">
+          <NavigationProperty Name="Courses" Relationship="DiamondbackModel.TutorCourse" FromRole="Tutor" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="Student" BaseType="DiamondbackModel.Person">
+          <Property Type="String" Name="IBAN" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="BIC" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Depositor" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="NameOfBank" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Payments" Relationship="DiamondbackModel.PaymentStudent" FromRole="Student" ToRole="Payment" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+        </EntityType>
+        <EntityType Name="User" BaseType="DiamondbackModel.Person">
+          <Property Type="String" Name="UserName" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Password" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="LastLogin" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" Precision="3" />
+          <Property Type="DateTime" Name="RegistrationDate" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" Precision="3" />
+          <Property Type="Boolean" Name="Admin" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <Property Type="Boolean" Name="IsPaid" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <NavigationProperty Name="Student" Relationship="DiamondbackModel.PaymentStudent" FromRole="Payment" ToRole="Student" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <NavigationProperty Name="Course" Relationship="DiamondbackModel.CoursePayment" FromRole="Payment" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="RoomNr" />
+          </Key>
+          <Property Type="Int32" Name="RoomNr" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <Property Type="Int32" Name="Capacity" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" />
+          <Property Type="String" Name="Building" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Street" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="City" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="CityCode" Nullable="true" cg:SetterAccess="Public" cg:GetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Appointments" Relationship="DiamondbackModel.RoomAppointment" FromRole="Room" ToRole="Appointment" />
+        </EntityType>
+        <Association Name="PaymentStudent">
+          <End Type="DiamondbackModel.Payment" Role="Payment" Multiplicity="*" />
+          <End Type="DiamondbackModel.Student" Role="Student" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseNr" />
+          </Key>
+          <Property Type="Int32" Name="CourseNr" Nullable="false" cg:GetterAccess="Public" cg:SetterAccess="Public" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Decimal" Name="AmountInEuro" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" Precision="6" Scale="2" />
+          <Property Type="String" Name="Description" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="MaxMember" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" />
+          <Property Type="Int32" Name="MinMember" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" />
+          <Property Type="Int32" Name="ValidityInMonth" Nullable="true" cg:GetterAccess="Public" cg:SetterAccess="Public" />
+          <NavigationProperty Name="Tutor" Relationship="DiamondbackModel.TutorCourse" FromRole="Course" ToRole="Tutor" />
+          <NavigationProperty Name="Payments" Relationship="DiamondbackModel.CoursePayment" FromRole="Course" ToRole="Payment" />
+          <NavigationProperty Name="Appointments" Relationship="DiamondbackModel.CourseAppointment" FromRole="Course" ToRole="Appointment" />
+        </EntityType>
+        <Association Name="TutorCourse">
+          <End Type="DiamondbackModel.Tutor" Role="Tutor" Multiplicity="1" />
+          <End Type="DiamondbackModel.Course" Role="Course" Multiplicity="*" />
+        </Association>
+        <Association Name="CoursePayment">
+          <End Type="DiamondbackModel.Course" Role="Course" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DiamondbackModel.Payment" Role="Payment" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Course" Relationship="DiamondbackModel.CourseAppointment" FromRole="Appointment" ToRole="Course" />
+          <NavigationProperty Name="Room" Relationship="DiamondbackModel.RoomAppointment" FromRole="Appointment" ToRole="Room" />
+        </EntityType>
+        <Association Name="CourseAppointment">
+          <End Type="DiamondbackModel.Course" Role="Course" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DiamondbackModel.Appointment" Role="Appointment" Multiplicity="*" />
+        </Association>
+        <Association Name="RoomAppointment">
+          <End Type="DiamondbackModel.Room" Multiplicity="1" Role="Room" >
+          </End>
+          <End Type="DiamondbackModel.Appointment" Multiplicity="*" Role="Appointment" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DiamondbackModelStoreContainer" CdmEntityContainer="DiamondbackModelContainer">
+    <EntitySetMapping Name="Persons">
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Person)">
+        <MappingFragment StoreEntitySet="Persons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Forename" ColumnName="Forename" />
+          <ScalarProperty Name="Birthyear" ColumnName="Birthyear" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="PrivatePhone" ColumnName="PrivatePhone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Student)">
+        <MappingFragment StoreEntitySet="Persons_Student">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="BIC" ColumnName="BIC" />
+          <ScalarProperty Name="Depositor" ColumnName="Depositor" />
+          <ScalarProperty Name="NameOfBank" ColumnName="NameOfBank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Tutor)">
+        <MappingFragment StoreEntitySet="Persons_Tutor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.User)">
+        <MappingFragment StoreEntitySet="Persons_User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Room)">
+        <MappingFragment StoreEntitySet="Rooms">
+          <ScalarProperty Name="RoomNr" ColumnName="RoomNr" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Course)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="CourseNr" ColumnName="CourseNr" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AmountInEuro" ColumnName="AmountInEuro" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MaxMember" ColumnName="MaxMember" />
+          <ScalarProperty Name="MinMember" ColumnName="MinMember" />
+          <ScalarProperty Name="ValidityInMonth" ColumnName="ValidityInMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="IsTypeOf(DiamondbackModel.Appointment)">
+        <MappingFragment StoreEntitySet="Appointments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PaymentStudent" TypeName="DiamondbackModel.PaymentStudent" StoreEntitySet="Payments">
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Student_Id" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TutorCourse" TypeName="DiamondbackModel.TutorCourse" StoreEntitySet="Courses">
+      <EndProperty Name="Tutor">
+        <ScalarProperty Name="Id" ColumnName="Tutor_Id" />
+      </EndProperty>
+      <EndProperty Name="Course">
+        <ScalarProperty Name="CourseNr" ColumnName="CourseNr" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CoursePayment" TypeName="DiamondbackModel.CoursePayment" StoreEntitySet="Payments">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="CourseNr" ColumnName="Course_CourseNr" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CourseAppointment" TypeName="DiamondbackModel.CourseAppointment" StoreEntitySet="Appointments">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="CourseNr" ColumnName="Course_CourseNr" />
+      </EndProperty>
+      <EndProperty Name="Appointment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoomAppointment" TypeName="DiamondbackModel.RoomAppointment" StoreEntitySet="Appointments">
+      <EndProperty Name="Room">
+        <ScalarProperty Name="RoomNr" ColumnName="Room_RoomNr" />
+      </EndProperty>
+      <EndProperty Name="Appointment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

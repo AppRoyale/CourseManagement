@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CourseManagement.Client.DB.Model;
+using System.Data;
+using System.Reflection;
+
+namespace CourseManagement.Client.BusinessLogic
+{
+    public static class StudentLogic
+    {
+ 
+
+        public static DataTable getAllStudents()
+        {
+            
+            DataTable studentTable = new DataTable();
+           
+            foreach (PropertyInfo pi in (new Student()).GetType().GetProperties())
+            {
+                studentTable.Columns.Add(pi.Name);
+            }
+
+            foreach (Student student in Student.getAll())
+            {
+               
+            }
+            
+            return studentTable;
+        }
+<<<<<<< HEAD
+
+=======
+        public static DataTable getDataTable2()
+        {
+            DataTable personTable = new DataTable();
+            personTable.Columns.Add("Persons");
+            personTable.Rows.Add("Person1");
+            personTable.Rows.Add("Person2");
+            return personTable;
+        }
+>>>>>>> beaec2991dd62be6b7a62e58f524d5f8ca4aad02
+    }
+}

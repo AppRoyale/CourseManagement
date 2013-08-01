@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FB99E52-08E5-479D-AA7E-91F3CA09B113}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CourseManagement</RootNamespace>
+    <AssemblyName>CourseManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CourseManagement.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Kursverwaltung.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+<<<<<<< HEAD
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Desktop\ExtendedWPFToolkit_Binaries\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+=======
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\packages\WPFToolkit.Extended.dll</HintPath>
+>>>>>>> 14d41e3497f503d25d9a8bb8061df3e61d92c9a8
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\BusinessLogic\AppointmentLogic.cs" />
+    <Compile Include="Client\BusinessLogic\CourseLogic.cs" />
+    <Compile Include="Client\BusinessLogic\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\BusinessLogic\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\BusinessLogic\AbstractLogic.cs" />
+    <Compile Include="Client\BusinessLogic\LogicUtils.cs" />
+    <Compile Include="Client\BusinessLogic\PaymentLogic.cs" />
+    <Compile Include="Client\BusinessLogic\RoomLogic.cs" />
+    <Compile Include="Client\BusinessLogic\UserLogic.cs" />
+    <Compile Include="Client\DB\Model\ActiveUserActions.cs" />
+    <Compile Include="Client\DB\Model\PaymentActions.cs" />
+    <Compile Include="Client\DB\PaymentQuery.cs" />
+    <Compile Include="Client\View\WndNewPayment.xaml.cs">
+      <DependentUpon>WndNewPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\View\WndParticipant2Course.xaml.cs">
+      <DependentUpon>WndParticipant2Course.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\BusinessLogic\PersonLogic.cs" />
+    <Compile Include="Client\BusinessLogic\StudentLogic.cs" />
+    <Compile Include="Client\BusinessLogic\TestData.cs" />
+    <Compile Include="Client\BusinessLogic\TutorLogic.cs" />
+    <Compile Include="Client\Controller\Start.cs" />
+    <Compile Include="Client\DB\DBConfiguration.cs" />
+    <Compile Include="Client\DB\DBUtils.cs" />
+    <Compile Include="Client\DB\CourseQuery.cs" />
+    <Compile Include="Client\DB\AppointmentQuery.cs" />
+    <Compile Include="Client\DB\Model\Appointment.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\CourseActions.cs" />
+    <Compile Include="Client\DB\Model\AppointmentActions.cs" />
+    <Compile Include="Client\DB\Model\PersonActions.cs" />
+    <Compile Include="Client\DB\Model\RoomActions.cs" />
+    <Compile Include="Client\DB\PersonQuery.cs" />
+    <Compile Include="Client\DB\RoomQuery.cs" />
+    <Compile Include="Client\DB\StudentQuery.cs" />
+    <Compile Include="Client\DB\TutorQuery.cs" />
+    <Compile Include="Client\DB\Model\ContextConstructors.cs" />
+    <Compile Include="Client\DB\Model\Course.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\DiamondbackModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondbackModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\DiamondbackModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\DiamondbackModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondbackModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\Payment.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\Person.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\Room.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\Student.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\BusinessLogic\ActiveUser.cs" />
+    <Compile Include="Client\DB\Model\StudentActions.cs" />
+    <Compile Include="Client\DB\Model\Tutor.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\TutorActions.cs" />
+    <Compile Include="Client\DB\Model\User.cs">
+      <DependentUpon>DiamondbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client\DB\Model\UserActions.cs" />
+    <Compile Include="Client\DB\UserQuery.cs" />
+    <Compile Include="Client\View\WndNewCourse.xaml.cs">
+      <DependentUpon>WndNewCourse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\View\WndNewRoom.xaml.cs">
+      <DependentUpon>WndNewRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\View\WndIndex.xaml.cs">
+      <DependentUpon>WndIndex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\View\WndLogin.xaml.cs">
+      <DependentUpon>WndLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Client\View\WndNewPerson.xaml.cs">
+      <DependentUpon>WndNewPerson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Client\BusinessLogic\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Client\DB\Model\DiamondbackModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DiamondbackModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Client\DB\Model\DiamondbackModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DiamondbackModel.edmx</DependentUpon>
+      <LastGenOutput>DiamondbackModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Client\DB\Model\DiamondbackModel.edmx.diagram">
+      <DependentUpon>DiamondbackModel.edmx</DependentUpon>
+    </None>
+    <None Include="Client\DB\Model\DiamondbackModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DiamondbackModel.edmx</DependentUpon>
+      <LastGenOutput>DiamondbackModel.cs</LastGenOutput>
+    </None>
+    <None Include="Client\View\Images\Help.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Client\View\WndNewCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndNewPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndNewRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndIndex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndNewPerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Client\View\WndParticipant2Course.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Client\View\Images\todo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Client\View\Images\addParticipant.ico" />
+    <Resource Include="Client\View\Images\addRoom.ico" />
+    <Resource Include="Client\View\Images\booking.ico" />
+    <Resource Include="Client\View\Images\delete.ico" />
+    <Resource Include="Client\View\Images\help.ico" />
+    <Resource Include="Client\View\Images\new.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\DB\Scripte\DiamondbackModel130519-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130512-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130511-2.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130511-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130508-2.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130508-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130506-3.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130506-2.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130506-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130430-3.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130430-2.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130430-1.edmx.sql" />
+    <Content Include="Client\DB\Scripte\DiamondbackModel130503-1.edmx.sql" />
+    <Resource Include="Kursverwaltung.ico" />
+    <Resource Include="Client\View\Images\Kursverwaltung.ico" />
+    <Resource Include="Client\View\Images\logo.png" />
+    <Resource Include="Client\View\Images\change.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿Download: http://teusje.wordpress.com/2009/08/12/wpf-office-ribbon-control/ 
+DLL: RibbonControlsLibrary.dll 

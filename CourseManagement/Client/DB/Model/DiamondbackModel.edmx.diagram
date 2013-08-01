@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c95b0479b0f4d1aa4e6186ba2f2cc6a" Name="Diagram1" ZoomLevel="72" DisplayType="true" >
+        <EntityTypeShape EntityType="DiamondbackModel.Person" Width="2.125" PointX="1.25" PointY="3.875" />
+        <EntityTypeShape EntityType="DiamondbackModel.Tutor" Width="1.5" PointX="2.5" PointY="8.25" />
+        <EntityTypeShape EntityType="DiamondbackModel.Student" Width="1.5" PointX="0.5" PointY="8.25" />
+        <EntityTypeShape EntityType="DiamondbackModel.User" Width="1.5" PointX="4.5" PointY="8.25" />
+        <EntityTypeShape EntityType="DiamondbackModel.Payment" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="DiamondbackModel.Room" Width="1.5" PointX="6.625" PointY="0.5" />
+        <InheritanceConnector EntityType="DiamondbackModel.Tutor" />
+        <InheritanceConnector EntityType="DiamondbackModel.Student" />
+        <InheritanceConnector EntityType="DiamondbackModel.User" />
+        <AssociationConnector Association="DiamondbackModel.PaymentStudent" />
+        <EntityTypeShape EntityType="DiamondbackModel.Course" Width="1.5" PointX="2.625" PointY="0.5" />
+        <AssociationConnector Association="DiamondbackModel.TutorCourse" />
+        <AssociationConnector Association="DiamondbackModel.CoursePayment" />
+        <EntityTypeShape EntityType="DiamondbackModel.Appointment" Width="1.5" PointX="4.625" PointY="0.5" />
+        <AssociationConnector Association="DiamondbackModel.CourseAppointment" />
+        <AssociationConnector Association="DiamondbackModel.RoomAppointment" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

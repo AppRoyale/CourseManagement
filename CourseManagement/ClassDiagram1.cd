@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CourseManagement.App" Collapsed="true">
+    <Position X="7.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.AbstractLogic" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAgAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\AbstractLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.ActiveUser" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACCAAAEAEAAAAACAAAAAAAAAAAAGAA=</HashCode>
+      <FileName>Client\BusinessLogic\ActiveUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.AppointmentLogic" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAQAAAAAAAAAAAAAAAQAAAAAAAIwAACBRgAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\AppointmentLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.CourseLogic" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAAAAAAAAAAAIQAAAAAAAAwAACBDiAIAgAA=</HashCode>
+      <FileName>Client\BusinessLogic\CourseLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.Form1" Collapsed="true">
+    <Position X="5.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8wAAwAKAADJgADIqAJCFKAAiQAM4AAgiAnQCAEEQIgE=</HashCode>
+      <FileName>Client\BusinessLogic\Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.LogicUtils" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAIIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\LogicUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.PaymentLogic" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAACAAAAAAQAAAAAAAIwAACBBiAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\PaymentLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.PersonLogic" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAAAAAAAAAQAAAAAACAwAACABgAYAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\PersonLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.RoomLogic" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAQAAAAAAAAAAAAAAAQAAAAAAAIwAACBBiAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\RoomLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.StudentLogic" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAQAAAAAAAIwAACBBgAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\StudentLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.TestData" Collapsed="true">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\TestData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.TutorLogic" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAQAAAAAAAAwAACBBgAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\TutorLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.BusinessLogic.UserLogic" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAAAAAAQAAAAAAAAwAACBBgAIAAAA=</HashCode>
+      <FileName>Client\BusinessLogic\UserLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.Controller.Start" Collapsed="true">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\Controller\Start.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.AppointmentQuery" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\AppointmentQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.CourseQuery" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAACAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\CourseQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.DBConfiguration" Collapsed="true">
+    <Position X="16.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Client\DB\DBConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.DBUtils" Collapsed="true">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\DB\DBUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.PaymentQuery" Collapsed="true">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\PaymentQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.PersonQuery" Collapsed="true">
+    <Position X="12.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\PersonQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.RoomQuery" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAACAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\RoomQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.StudentQuery" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAACAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\StudentQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.TutorQuery" Collapsed="true">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAACAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\TutorQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.UserQuery" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAACIAgAIEAAA=</HashCode>
+      <FileName>Client\DB\UserQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.ActiveUserActions" Collapsed="true">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\DB\Model\ActiveUserActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Appointment" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAJAAAQAgAAAAAQAAAAAAgEIEAAA=</HashCode>
+      <FileName>Client\DB\Model\AppointmentActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.DiamondbackModelContainer" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAACUAAAAAAAAAAAABEAAAA=</HashCode>
+      <FileName>Client\DB\Model\ContextConstructors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Course" Collapsed="true">
+    <Position X="11" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAABgAEAIAAAEIQAAQAEAAQAAACACgAIEAAA=</HashCode>
+      <FileName>Client\DB\Model\CourseActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Payment" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAIAAAQAAAAAAAQAAAAAAgAIEAAA=</HashCode>
+      <FileName>Client\DB\Model\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Person" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAgAAAAECIAAABAQAABAAAAUggAAIAgQIEAAA=</HashCode>
+      <FileName>Client\DB\Model\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Room" Collapsed="true">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAIAAAEAQACQAAAAQgAAAIAgAIEAAA=</HashCode>
+      <FileName>Client\DB\Model\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Student" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAJAAAAAAAAAAQAAAAAAAQAMAAAAgAIEACA=</HashCode>
+      <FileName>Client\DB\Model\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.Tutor" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAgBIEAAA=</HashCode>
+      <FileName>Client\DB\Model\Tutor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.DB.Model.User" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAQAAAQAAAQACAQIAgAIEAAA=</HashCode>
+      <FileName>Client\DB\Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.SpecificTables" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEACEAgAAAAAAAGAAAAAAAAAAAACAAAAAAAAAAAQIA=</HashCode>
+      <FileName>Client\View\SpecificGrids.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndChangePsw" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\View\WndChangePsw.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndIndex" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAAAGAA4hIAAQAAAGCFLKggwgAAQAQHJtgCIEwAQ=</HashCode>
+      <FileName>Client\View\WndIndex.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndLogin" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Client\View\WndLogin.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndNewCourse" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAgAAAAAAAAAIBAAAQTAAAKAABAAAAAAAABMAAA=</HashCode>
+      <FileName>Client\View\WndNewCourse.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndNewPayment" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAgQAAAAAAAAAAAAAAAAAAAAIAAAEAAAA=</HashCode>
+      <FileName>Client\View\WndNewPayment.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.wndNewPerson" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CITAAGACQgEIAUEAGAAEiBEEAAKgQgoACAAoBgAkAgE=</HashCode>
+      <FileName>Client\View\WndNewPerson.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndNewRoom" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAABAAAAQgAIIACAAAAoAAAggAEAAIAAAAAAA=</HashCode>
+      <FileName>Client\View\WndNewRoom.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Client.View.WndParticipant2Course" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgBAAAAEAAAAAAAAAAAAAAAAAAAAAADAAQAAAg=</HashCode>
+      <FileName>Client\View\WndParticipant2Course.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseManagement.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
